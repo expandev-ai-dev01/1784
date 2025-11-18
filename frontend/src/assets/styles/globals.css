@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-500: oklch(0.55 0.22 250);
+  --color-primary-600: oklch(0.50 0.22 250);
+  --color-primary-700: oklch(0.45 0.22 250);
+  
+  --color-background: white;
+  --color-foreground: oklch(0.15 0 0);
+  
+  --color-muted: oklch(0.96 0 0);
+  --color-muted-foreground: oklch(0.45 0 0);
+  
+  --color-border: oklch(0.90 0 0);
+  --color-input: oklch(0.90 0 0);
+  --color-ring: oklch(0.55 0.22 250);
+  
+  --font-body: "Inter", "system-ui", "sans-serif";
+}
+
+@variant dark (&:where(.dark, .dark *));
+
+.dark {
+  --color-background: oklch(0.15 0 0);
+  --color-foreground: white;
+  --color-muted: oklch(0.20 0 0);
+  --color-muted-foreground: oklch(0.65 0 0);
+  --color-border: oklch(0.25 0 0);
+  --color-input: oklch(0.25 0 0);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+  }
+}
+
+@utility center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@utility stack {
+  display: flex;
+  flex-direction: column;
+}
